@@ -1,0 +1,14 @@
+ORG 0000H
+SETB P0.0 //to set port pin
+SETB P0.1
+SETB P0.2
+READ:MOV C,P0.0 // to move P0.0 into C
+CPL C // complement C
+MOV 00H,C // To move C into 00H
+MOV C,P0.1
+CPL C
+ANL C,00H
+CPL C
+MOV P0.2,C
+SJMP READ
+END
